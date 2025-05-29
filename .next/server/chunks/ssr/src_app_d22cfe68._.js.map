@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Toby/app/my-app/src/app/lib/store.ts"],"sourcesContent":["import { configureStore } from \"@reduxjs/toolkit\";\r\n\r\nexport const store = configureStore({\r\n    reducer: {}\r\n})\r\n\r\nexport type RootState = ReturnType<typeof store.getState>\r\nexport type AppDispatch = typeof store.dispatch"],"names":[],"mappings":";;;AAAA;;AAEO,MAAM,QAAQ,CAAA,GAAA,2LAAA,CAAA,iBAAc,AAAD,EAAE;IAChC,SAAS,CAAC;AACd","debugId":null}},
+    {"offset": {"line": 21, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Toby/app/my-app/src/app/provider/provider.tsx"],"sourcesContent":["import { store } from \"app/lib/store\";\r\nimport { ReactNode } from \"react\";\r\nimport { Provider } from \"react-redux\";\r\n\r\n\r\nexport default function Providers({children}: {children : ReactNode}){\r\n    return (\r\n        <Provider store={store}>{children}</Provider>\r\n    )\r\n}"],"names":[],"mappings":";;;;AAAA;AAEA;;;;AAGe,SAAS,UAAU,EAAC,QAAQ,EAAyB;IAChE,qBACI,8OAAC,8IAAA,CAAA,WAAQ;QAAC,OAAO,0HAAA,CAAA,QAAK;kBAAG;;;;;;AAEjC","debugId":null}},
+    {"offset": {"line": 46, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Toby/app/my-app/src/app/layout.tsx"],"sourcesContent":["import React from \"react\";\nimport Providers from \"./provider/provider\";\n\nexport default function RootLayout({\n  children,\n}: {\n  children: React.ReactNode\n}) {\n  return(\n    <Providers>\n      {children}\n    </Providers>\n  )\n}"],"names":[],"mappings":";;;;AACA;;;AAEe,SAAS,WAAW,EACjC,QAAQ,EAGT;IACC,qBACE,8OAAC,mIAAA,CAAA,UAAS;kBACP;;;;;;AAGP","debugId":null}}]
+}

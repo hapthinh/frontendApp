@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 60, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Toby/app/my-app/src/app/api/todolist/route.ts"],"sourcesContent":["import { NextResponse } from \"next/server\";\r\n\r\n\r\nexport async function GET() {\r\n  return NextResponse.json({ todos });\r\n}\r\n\r\nexport async function POST() {\r\n    \r\n}"],"names":[],"mappings":";;;;AAAA;;AAGO,eAAe;IACpB,OAAO,gIAAA,CAAA,eAAY,CAAC,IAAI,CAAC;QAAE;IAAM;AACnC;AAEO,eAAe,QAEtB","debugId":null}}]
+}

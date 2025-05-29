@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 60, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Toby/app/my-app/src/app/api/data.ts"],"sourcesContent":["\r\nexport const todos = [\r\n  { id: 1, todo: \"Learn Next.js\", completed: false },\r\n  { id: 2, todo: \"Build a Todo App\", completed: false }\r\n];"],"names":[],"mappings":";;;AACO,MAAM,QAAQ;IACnB;QAAE,IAAI;QAAG,MAAM;QAAiB,WAAW;IAAM;IACjD;QAAE,IAAI;QAAG,MAAM;QAAoB,WAAW;IAAM;CACrD","debugId":null}},
+    {"offset": {"line": 81, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Toby/app/my-app/src/app/api/todolist/%5Bid%5D/route.ts"],"sourcesContent":["import { NextResponse } from \"next/server\";\r\nimport { todos } from \"app/api/data\";\r\nimport { arrayBuffer } from \"stream/consumers\";\r\n\r\nexport async function GET({params} : {params : {id :  Number}}) {\r\n    try {\r\n        console.log(params)\r\n        const id = params.id\r\n        const todo = todos.filter((x) => x.id === id)\r\n        if(!todo) {}\r\n        return NextResponse.json({todo})\r\n    } catch (e) {\r\n        console.log(e)\r\n    }\r\n}"],"names":[],"mappings":";;;AAAA;AACA;;;AAGO,eAAe,IAAI,EAAC,MAAM,EAA6B;IAC1D,IAAI;QACA,QAAQ,GAAG,CAAC;QACZ,MAAM,KAAK,OAAO,EAAE;QACpB,MAAM,OAAO,2HAAA,CAAA,QAAK,CAAC,MAAM,CAAC,CAAC,IAAM,EAAE,EAAE,KAAK;QAC1C,IAAG,CAAC,MAAM,CAAC;QACX,OAAO,gIAAA,CAAA,eAAY,CAAC,IAAI,CAAC;YAAC;QAAI;IAClC,EAAE,OAAO,GAAG;QACR,QAAQ,GAAG,CAAC;IAChB;AACJ","debugId":null}}]
+}

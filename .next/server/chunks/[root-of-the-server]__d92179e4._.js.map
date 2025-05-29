@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 6, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 60, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Toby/app/my-app/src/app/api/data.ts"],"sourcesContent":["\r\nexport const todos = [\r\n  { id: 1, todo: \"Learn Next.js\", completed: false },\r\n  { id: 2, todo: \"Build a Todo App\", completed: false }\r\n];"],"names":[],"mappings":";;;AACO,MAAM,QAAQ;IACnB;QAAE,IAAI;QAAG,MAAM;QAAiB,WAAW;IAAM;IACjD;QAAE,IAAI;QAAG,MAAM;QAAoB,WAAW;IAAM;CACrD","debugId":null}},
+    {"offset": {"line": 81, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Toby/app/my-app/src/app/api/todolist/route.ts"],"sourcesContent":["import { NextResponse } from \"next/server\";\r\nimport { todos } from \"../data\";\r\n\r\nexport async function GET() {\r\n  return NextResponse.json({ todos });\r\n}\r\n\r\nexport async function POST(request : Request) {\r\n    const body = await request.json()\r\n\r\n    const newTodo = {id : Date.now(), ...body, completed: false}\r\n    todos.push(newTodo)\r\n    return NextResponse.json(newTodo)\r\n}\r\n\r\nexport async function DELETE() {\r\n  \r\n}"],"names":[],"mappings":";;;;;AAAA;AACA;;;AAEO,eAAe;IACpB,OAAO,gIAAA,CAAA,eAAY,CAAC,IAAI,CAAC;QAAE,OAAA,2HAAA,CAAA,QAAK;IAAC;AACnC;AAEO,eAAe,KAAK,OAAiB;IACxC,MAAM,OAAO,MAAM,QAAQ,IAAI;IAE/B,MAAM,UAAU;QAAC,IAAK,KAAK,GAAG;QAAI,GAAG,IAAI;QAAE,WAAW;IAAK;IAC3D,2HAAA,CAAA,QAAK,CAAC,IAAI,CAAC;IACX,OAAO,gIAAA,CAAA,eAAY,CAAC,IAAI,CAAC;AAC7B;AAEO,eAAe,UAEtB","debugId":null}}]
+}

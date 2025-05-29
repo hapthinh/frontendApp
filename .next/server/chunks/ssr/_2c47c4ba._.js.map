@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 7, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Toby/app/my-app/src/app/server.tsx"],"sourcesContent":["'use server'\r\n\r\nexport function Header() {\r\n    return (\r\n        <div>This is header</div>\r\n    )\r\n}"],"names":[],"mappings":";;;;;;;;;;AAEO,SAAS;IACZ,qBACI,8OAAC;kBAAI;;;;;;AAEb;;;IAJgB;;AAAA,+OAAA","debugId":null}},
+    {"offset": {"line": 37, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Toby/app/my-app/.next-internal/server/app/page/actions.js%20%28server%20actions%20loader%29"],"sourcesContent":["export {Header as '00f855e7934ce22a6dab3b4004caa02b72a5c7da84'} from 'ACTIONS_MODULE0'\n"],"names":[],"mappings":";AAAA","debugId":null}},
+    {"offset": {"line": 89, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Toby/app/my-app/src/app/page.tsx"],"sourcesContent":["import { Header } from \"./server\";\n\n\nexport default function Page() {\n  return (\n    <div>\n      <Header />\n    </div>\n  )\n}"],"names":[],"mappings":";;;;AAAA;;;AAGe,SAAS;IACtB,qBACE,8OAAC;kBACC,cAAA,8OAAC,qHAAA,CAAA,SAAM;;;;;;;;;;AAGb","debugId":null}}]
+}
