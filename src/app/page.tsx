@@ -5,6 +5,7 @@ import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
 import Providers from "./provider/provider";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import TodoItem from "./components/TodoItem";
 
 export default function App(){
   const queryClient = new QueryClient();
@@ -13,6 +14,7 @@ export default function App(){
     <QueryClientProvider client={queryClient}>
       <AddTodo />
       <TodoList />
+      <TodoItem />
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   </Providers>

@@ -96,8 +96,8 @@ async function GET() {
     });
 }
 async function POST(request) {
-    const body = await request.json();
     const raw = await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].readFile(file, "utf-8");
+    const body = await request.json();
     const data = JSON.parse(raw);
     const newTodo = {
         ...body,
@@ -107,7 +107,17 @@ async function POST(request) {
     await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].writeFile(file, JSON.stringify(data, null, 2), "utf-8");
     return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json(newTodo);
 }
-async function DELETE() {}
+async function DELETE(request) {
+    const raw = await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].readFile(file, "utf-8");
+    const body = await request.json();
+    const id = body.id;
+    const data = JSON.parse(raw);
+    data.todos = data.todos.filter((todo)=>todo.id !== id);
+    await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].writeFile(file, JSON.stringify(data, null, 2), "utf-8");
+    return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+        success: true
+    });
+}
 }}),
 
 };

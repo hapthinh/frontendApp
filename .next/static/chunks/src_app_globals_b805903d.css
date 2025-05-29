@@ -232,12 +232,24 @@
     margin-bottom: calc(var(--spacing) * 2);
   }
 
+  .ml-10 {
+    margin-left: calc(var(--spacing) * 10);
+  }
+
   .ml-50 {
     margin-left: calc(var(--spacing) * 50);
   }
 
+  .ml-90 {
+    margin-left: calc(var(--spacing) * 90);
+  }
+
   .flex {
     display: flex;
+  }
+
+  .table {
+    display: table;
   }
 
   .h-6 {
@@ -264,8 +276,12 @@
     flex-basis: calc(var(--spacing) * 128);
   }
 
-  .table-fixed {
-    table-layout: fixed;
+  .table-auto {
+    table-layout: auto;
+  }
+
+  .flex-row {
+    flex-direction: row;
   }
 
   .items-stretch {

@@ -1,44 +1,24 @@
 {
   "todos": [
     {
-      "id": 11,
-      "todo": "Text a friend I haven't talked to in a long time",
-      "completed": false
-    },
-    {
-      "id": 12,
-      "todo": "Organize pantry",
-      "completed": true
-    },
-    {
-      "id": 13,
-      "todo": "Buy a new house decoration",
-      "completed": false
-    },
-    {
-      "id": 1748485913050,
-      "todo": "aaa",
-      "completed": false
-    },
-    {
       "id": 1748486102146,
       "todo": "aaa",
-      "completed": false
+      "completed": true
     },
     {
       "id": 1748486517202,
       "todo": "bbb",
-      "completed": false
+      "completed": true
     },
     {
       "id": 1748486669730,
       "todo": "aaaaaa",
-      "completed": false
+      "completed": true
     },
     {
       "id": 1748487935210,
       "todo": "ccc",
-      "completed": false
+      "completed": true
     },
     {
       "id": 1748489719921,
@@ -48,32 +28,27 @@
     {
       "id": 1748490869809,
       "todo": "ddd",
-      "completed": false
+      "completed": true
     },
     {
       "id": 1748490923059,
       "todo": "eee",
-      "completed": false
+      "completed": true
     },
     {
       "id": 1748491053985,
       "todo": "fff",
-      "completed": false
+      "completed": true
     },
     {
-      "id": 1748491058674,
-      "todo": "hhhh",
-      "completed": false
+      "id": 1748503603169,
+      "todo": "phai lam",
+      "completed": true
     },
     {
-      "id": 1748492824385,
-      "todo": "rrrr",
-      "completed": false
-    },
-    {
-      "id": 1748494502513,
-      "todo": "qqqq",
-      "completed": false
+      "id": 1748505713337,
+      "todo": "hom nay 29",
+      "completed": true
     }
   ]
 }

@@ -172,14 +172,14 @@ function TodoList() {
         children: "Loading..."
     }, void 0, false, {
         fileName: "[project]/src/app/components/TodoList.tsx",
-        lineNumber: 10,
+        lineNumber: 9,
         columnNumber: 29
     }, this);
     console.log(query.data);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "mr-50 ml-50",
         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("table", {
-            className: "table-fixed border-1 w-full",
+            className: "table-auto border-1 w-full",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("thead", {
                     className: "border-1",
@@ -188,20 +188,20 @@ function TodoList() {
                             children: "Todo"
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/TodoList.tsx",
-                            lineNumber: 16,
+                            lineNumber: 15,
                             columnNumber: 21
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("th", {
                             children: "Status"
                         }, void 0, false, {
                             fileName: "[project]/src/app/components/TodoList.tsx",
-                            lineNumber: 17,
+                            lineNumber: 16,
                             columnNumber: 21
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/components/TodoList.tsx",
-                    lineNumber: 15,
+                    lineNumber: 14,
                     columnNumber: 17
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("tbody", {
@@ -209,40 +209,47 @@ function TodoList() {
                             className: "border-1",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
-                                    children: todo.todo
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Link, {
+                                        href: `/todo/${todo.id}`,
+                                        children: todo.todo
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/app/components/TodoList.tsx",
+                                        lineNumber: 22,
+                                        columnNumber: 29
+                                    }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/TodoList.tsx",
-                                    lineNumber: 22,
-                                    columnNumber: 29
+                                    lineNumber: 21,
+                                    columnNumber: 25
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("td", {
                                     className: "text-center",
                                     children: todo.completed ? "done" : "processing"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/components/TodoList.tsx",
-                                    lineNumber: 25,
-                                    columnNumber: 29
+                                    lineNumber: 24,
+                                    columnNumber: 25
                                 }, this)
                             ]
                         }, todo.id, true, {
                             fileName: "[project]/src/app/components/TodoList.tsx",
-                            lineNumber: 21,
+                            lineNumber: 20,
                             columnNumber: 21
                         }, this))
                 }, void 0, false, {
                     fileName: "[project]/src/app/components/TodoList.tsx",
-                    lineNumber: 19,
+                    lineNumber: 18,
                     columnNumber: 17
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/app/components/TodoList.tsx",
-            lineNumber: 14,
+            lineNumber: 13,
             columnNumber: 13
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/components/TodoList.tsx",
-        lineNumber: 13,
+        lineNumber: 12,
         columnNumber: 9
     }, this);
 }
