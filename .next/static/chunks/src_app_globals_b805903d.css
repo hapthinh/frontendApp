@@ -2,6 +2,7 @@
 @layer properties {
   @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
     *, :before, :after, ::backdrop {
+      --tw-space-y-reverse: 0;
       --tw-border-style: solid;
       --tw-font-weight: initial;
       --tw-shadow: 0 0 #0000;
@@ -26,10 +27,18 @@
   :root, :host {
     --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --color-red-500: oklch(63.7% .237 25.331);
+    --color-red-600: oklch(57.7% .245 27.325);
+    --color-lime-400: oklch(84.1% .238 128.85);
+    --color-lime-600: oklch(64.8% .2 131.684);
+    --color-green-600: oklch(62.7% .194 149.214);
+    --color-blue-100: oklch(93.2% .032 255.585);
     --color-indigo-400: oklch(67.3% .182 276.935);
     --color-indigo-500: oklch(58.5% .233 277.117);
     --color-indigo-600: oklch(51.1% .262 276.966);
     --color-indigo-700: oklch(45.7% .24 277.023);
+    --color-stone-200: oklch(92.3% .003 48.717);
+    --color-stone-300: oklch(86.9% .005 56.366);
     --color-black: #000;
     --color-white: #fff;
     --spacing: .25rem;
@@ -228,12 +237,16 @@
 @layer components;
 
 @layer utilities {
-  .m-1 {
-    margin: calc(var(--spacing) * 1);
+  .mt-1 {
+    margin-top: calc(var(--spacing) * 1);
   }
 
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
+  }
+
+  .mt-4 {
+    margin-top: calc(var(--spacing) * 4);
   }
 
   .mt-5 {
@@ -256,6 +269,10 @@
     margin-left: calc(var(--spacing) * 2);
   }
 
+  .ml-4 {
+    margin-left: calc(var(--spacing) * 4);
+  }
+
   .ml-10 {
     margin-left: calc(var(--spacing) * 10);
   }
@@ -272,12 +289,12 @@
     display: flex;
   }
 
-  .table {
-    display: table;
-  }
-
   .h-6 {
     height: calc(var(--spacing) * 6);
+  }
+
+  .h-9 {
+    height: calc(var(--spacing) * 9);
   }
 
   .h-10 {
@@ -288,16 +305,20 @@
     height: calc(var(--spacing) * 11);
   }
 
+  .w-15 {
+    width: calc(var(--spacing) * 15);
+  }
+
+  .w-25 {
+    width: calc(var(--spacing) * 25);
+  }
+
   .w-50 {
     width: calc(var(--spacing) * 50);
   }
 
   .w-56 {
     width: calc(var(--spacing) * 56);
-  }
-
-  .w-100 {
-    width: calc(var(--spacing) * 100);
   }
 
   .w-full {
@@ -316,8 +337,22 @@
     flex-direction: row;
   }
 
+  .content-center {
+    align-content: center;
+  }
+
   .items-stretch {
     align-items: stretch;
+  }
+
+  :where(.space-y-2 > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse)));
+  }
+
+  .rounded {
+    border-radius: .25rem;
   }
 
   .rounded-full {
@@ -345,8 +380,20 @@
     background-color: var(--color-indigo-600);
   }
 
+  .bg-stone-200 {
+    background-color: var(--color-stone-200);
+  }
+
+  .bg-stone-300 {
+    background-color: var(--color-stone-300);
+  }
+
   .bg-white {
     background-color: var(--color-white);
+  }
+
+  .p-2 {
+    padding: calc(var(--spacing) * 2);
   }
 
   .px-4 {
@@ -375,8 +422,16 @@
     color: var(--color-black);
   }
 
-  .text-indigo-600 {
-    color: var(--color-indigo-600);
+  .text-green-600 {
+    color: var(--color-green-600);
+  }
+
+  .text-lime-600 {
+    color: var(--color-lime-600);
+  }
+
+  .text-red-600 {
+    color: var(--color-red-600);
   }
 
   .text-white {
@@ -400,14 +455,20 @@
   }
 
   @media (hover: hover) {
-    .hover\:bg-indigo-600:hover {
-      background-color: var(--color-indigo-600);
+    .hover\:bg-indigo-700:hover {
+      background-color: var(--color-indigo-700);
     }
   }
 
   @media (hover: hover) {
-    .hover\:bg-indigo-700:hover {
-      background-color: var(--color-indigo-700);
+    .hover\:bg-lime-400:hover {
+      background-color: var(--color-lime-400);
+    }
+  }
+
+  @media (hover: hover) {
+    .hover\:bg-red-500:hover {
+      background-color: var(--color-red-500);
     }
   }
 
@@ -425,10 +486,14 @@
   .focus\:ring-indigo-500:focus {
     --tw-ring-color: var(--color-indigo-500);
   }
+
+  .data-focus\:bg-blue-100[data-focus] {
+    background-color: var(--color-blue-100);
+  }
 }
 
 :root {
-  --background: #c5641a;
+  --background: #fff;
   --foreground: #171717;
 }
 
@@ -443,6 +508,12 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
 }
 
 @property --tw-border-style {

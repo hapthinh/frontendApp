@@ -90,12 +90,12 @@ const file = __TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$externa
 async function DELETE(request) {
     const url = new URL(request.url);
     const id = url.pathname.split("/").pop();
+    const raw = await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].readFile(file, "utf-8");
+    const data = JSON.parse(raw);
     if (!id) return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
         success: false,
         error: "Missing id"
     });
-    const raw = await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].readFile(file, "utf-8");
-    const data = JSON.parse(raw);
     data.todos = data.todos.filter((todo)=>Number(todo.id) !== Number(id));
     await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].writeFile(file, JSON.stringify(data, null, 2), "utf-8");
     return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
@@ -105,11 +105,11 @@ async function DELETE(request) {
 async function PATCH(request) {
     const body = await request.json();
     const raw = await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].readFile(file, "utf-8");
-    const { id, completed } = body;
+    const { id, status } = body;
     const data = JSON.parse(raw);
     data.todos = data.todos.map((todo)=>todo.id === id ? {
             ...todo,
-            completed
+            status
         } : todo);
     await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].writeFile(file, JSON.stringify(data, null, 2), "utf-8");
     return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({

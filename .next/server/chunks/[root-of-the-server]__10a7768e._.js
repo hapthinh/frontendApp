@@ -89,12 +89,20 @@ var __TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$2
 const file = __TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].join(process.cwd() + "/src/app/json/todolist.json");
 async function GET(request) {
     const { searchParams } = new URL(request.url);
-    const kw = searchParams.get("kw") || "";
+    const keyword = searchParams.get("kw") || "";
+    const status = searchParams.get("status") || "";
     const raw = await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].readFile(file, "utf-8");
     const data = JSON.parse(raw);
-    let todos = data.todos;
-    if (kw) {
-        todos = todos.filter((todo)=>String(todo.todo).toLowerCase().includes(kw.toLowerCase()));
+    let todos = data;
+    // Filter by keyword
+    if (keyword) {
+        todos.todos = todos.todos.filter((todo)=>{
+            String(todo.todo).toLowerCase().includes(keyword.toLowerCase());
+        });
+    }
+    // Filter by status
+    if (status) {
+        todos.todos = todos.todos.filter((todo)=>String(todo.status) === status);
     }
     return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
         todos
@@ -115,8 +123,8 @@ async function POST(request) {
 async function DELETE(request) {
     const raw = await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].readFile(file, "utf-8");
     const body = await request.json();
-    const id = body.id;
     const data = JSON.parse(raw);
+    const id = body.id;
     data.todos = data.todos.filter((todo)=>todo.id !== id);
     await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].writeFile(file, JSON.stringify(data, null, 2), "utf-8");
     return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
