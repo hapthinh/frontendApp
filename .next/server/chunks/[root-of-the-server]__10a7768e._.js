@@ -87,10 +87,15 @@ var __TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$2
 ;
 ;
 const file = __TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].join(process.cwd() + "/src/app/json/todolist.json");
-async function GET() {
+async function GET(request) {
+    const { searchParams } = new URL(request.url);
+    const kw = searchParams.get("kw") || "";
     const raw = await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].readFile(file, "utf-8");
-    const todos = JSON.parse(raw);
-    console.log(raw);
+    const data = JSON.parse(raw);
+    let todos = data.todos;
+    if (kw) {
+        todos = todos.filter((todo)=>String(todo.todo).toLowerCase().includes(kw.toLowerCase()));
+    }
     return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
         todos
     });

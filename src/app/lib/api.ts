@@ -1,12 +1,14 @@
 //file API TODOLIST {GET, POST, DELETE, PATCH} CRUD
 
+const API = 'http://localhost:3000/api/todolist'
+
 export async function getTodo() {
-    const res = await fetch('http://localhost:3000/api/todolist', { cache: "no-store" });
+    const res = await fetch(API, { cache: "no-store" });
     return res.json();
 }
 
 export async function postTodo({id, todo}: {id: any, todo: any}): Promise<any> {
-    const res = await fetch ('http://localhost:3000/api/todolist', {
+    const res = await fetch (API, {
         method : 'POST',
         headers : { 'Content-type': 'application/json'},
         body : JSON.stringify({
@@ -18,14 +20,14 @@ export async function postTodo({id, todo}: {id: any, todo: any}): Promise<any> {
 }
 
 export async function deteleTodo({id}: {id : Number}) {
-    const res = await fetch(`http://localhost:3000/api/todolist/${id}`,{
+    const res = await fetch(`${API}/${id}`,{
         method: 'DELETE'
     })
     return res.json()
 }
 
 export async function ChangeType({id, completed}: {id: Number, completed: boolean}) {
-    const res = await fetch(`http://localhost:3000/api/todolist/${id}`,{
+    const res = await fetch(`${API}/${id}`,{
         method: 'PATCH',
         headers: {'Content-type': 'application/json'},
         body: JSON.stringify({
@@ -36,13 +38,11 @@ export async function ChangeType({id, completed}: {id: Number, completed: boolea
 }
 
 
-export async function getTodosByType({completed} : {completed : boolean}) {
-    const res = await fetch(`http://localhost:3000/api/todolist/`, {
-            cache: "no-store"
-     });
-    let data = await res.json();
-    data.todos = data.todos.todos.map((todo : any) => todo.completed === completed)
-    return data
+export async function getTodosByKw(kw : String) {
+    const res = await fetch(`${API}?kw=${kw}`,{
+        cache: 'no-store'
+    })
+    return res.json()
 }
 
 

@@ -5,11 +5,13 @@ import path from "path";
 //path file json -> app/json/todolist.json
 export const file = path.join(process.cwd() + "/src/app/json/todolist.json")
 
-export async function DELETE({ params }: { params: { id: string } }) {
-    const id = Number(params.id);
+export async function DELETE(request: Request) {
+    const url = new URL(request.url)
+    const id = url.pathname.split("/").pop()
+    if(!id) return NextResponse.json({success : false,error: "Missing id"})
     const raw = await fs.readFile(file,"utf-8")
     const data = JSON.parse(raw);
-    data.todos = data.todos.filter((todo: any) => todo.id !== id);
+    data.todos = data.todos.filter((todo: any) => Number(todo.id) !== Number(id));
     await fs.writeFile(file, JSON.stringify(data, null, 2), "utf-8");
     return NextResponse.json({ success: true });
 }

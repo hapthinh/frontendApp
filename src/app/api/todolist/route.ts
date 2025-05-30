@@ -6,10 +6,17 @@ import path from "path";
 export const file = path.join(process.cwd() + "/src/app/json/todolist.json")
 
 // Route CRUD todolist
-export async function GET() {
+export async function GET(request: Request) {
+    const {searchParams} = new URL(request.url)
+    const kw = searchParams.get("kw") || "";
     const raw = await fs.readFile(file,"utf-8")
-    const todos = JSON.parse(raw)
-    console.log(raw)
+    const data = JSON.parse(raw)
+
+    let todos = data.todos
+    if(kw){
+        todos = todos.filter((todo: any) => 
+            String(todo.todo).toLowerCase().includes(kw.toLowerCase()))
+    }
     return NextResponse.json({ todos });
 }
 
