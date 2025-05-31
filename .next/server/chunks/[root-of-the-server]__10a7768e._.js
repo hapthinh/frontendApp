@@ -87,6 +87,7 @@ var __TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$2
 ;
 ;
 const file = __TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].join(process.cwd() + "/src/app/json/todolist.json");
+<<<<<<< HEAD
 async function GET(request) {
     const { searchParams } = new URL(request.url);
     const keyword = searchParams.get("kw") || "";
@@ -104,13 +105,24 @@ async function GET(request) {
     if (status) {
         todos.todos = todos.todos.filter((todo)=>String(todo.status) === status);
     }
+=======
+async function GET() {
+    const raw = await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].readFile(file, "utf-8");
+    const todos = JSON.parse(raw);
+    console.log(raw);
+>>>>>>> 238a5b2 (ok)
     return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
         todos
     });
 }
 async function POST(request) {
+<<<<<<< HEAD
     const raw = await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].readFile(file, "utf-8");
     const body = await request.json();
+=======
+    const body = await request.json();
+    const raw = await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].readFile(file, "utf-8");
+>>>>>>> 238a5b2 (ok)
     const data = JSON.parse(raw);
     const newTodo = {
         ...body,
@@ -120,6 +132,7 @@ async function POST(request) {
     await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].writeFile(file, JSON.stringify(data, null, 2), "utf-8");
     return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json(newTodo);
 }
+<<<<<<< HEAD
 async function DELETE(request) {
     const raw = await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].readFile(file, "utf-8");
     const body = await request.json();
@@ -131,6 +144,9 @@ async function DELETE(request) {
         success: true
     });
 }
+=======
+async function DELETE() {}
+>>>>>>> 238a5b2 (ok)
 }}),
 
 };

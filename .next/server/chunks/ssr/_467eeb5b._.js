@@ -58,17 +58,29 @@ function RootLayout({ children }) {
                 children: children
             }, void 0, false, {
                 fileName: "[project]/src/app/layout.tsx",
+<<<<<<< HEAD
                 lineNumber: 14,
+=======
+                lineNumber: 13,
+>>>>>>> 238a5b2 (ok)
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/layout.tsx",
+<<<<<<< HEAD
             lineNumber: 13,
+=======
+            lineNumber: 12,
+>>>>>>> 238a5b2 (ok)
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/layout.tsx",
+<<<<<<< HEAD
         lineNumber: 12,
+=======
+        lineNumber: 11,
+>>>>>>> 238a5b2 (ok)
         columnNumber: 5
     }, this);
 }
