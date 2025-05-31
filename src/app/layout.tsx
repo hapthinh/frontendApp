@@ -1,19 +1,18 @@
 import React from "react";
+
 import Providers from "./provider/provider";
-import './globals.css'
+import "./globals.css";
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-  return(
+  return (
     <Providers>
       <html>
-        <body>
-          {children}
-        </body>
+        <body>{children}</body>
       </html>
     </Providers>
-  )
+  );
 }

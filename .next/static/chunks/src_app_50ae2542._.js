@@ -163,7 +163,7 @@ function AddTodo() {
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
-                                className: "text-black rounded-lg border border-indigo-400 focus:ring-2 focus:ring-indigo-500 px-4 py-2 w-56 outline-none transition ml-50 w-100",
+                                className: "text-black rounded-lg border border-indigo-400 focus:ring-2 focus:ring-indigo-500 px-4 py-2 w-56 outline-none transition ml-50 w-100 h-9",
                                 type: "text",
                                 value: input,
                                 onChange: (e)=>setInput(e.target.value),
@@ -174,7 +174,7 @@ function AddTodo() {
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                className: "bg-indigo-600 text-white px-4 py-2 rounded-lg font-semibold shadow hover:bg-indigo-700 transition ml-2 h-11",
+                                className: "bg-indigo-600 text-white px-4 py-2 rounded-lg font-semibold shadow hover:bg-indigo-700 transition ml-2 h-10",
                                 onClick: ()=>{
                                     if (input.trim()) {
                                         mutation.mutate({
@@ -435,13 +435,13 @@ function TodoList() {
         className: "mr-50 ml-50 mt-5",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: " bg-black basis-128 text-center font-bold ",
+                className: " bg-black basis-128 text-center font-bold text-white",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                     children: "THAO TAC TODOLIST!!!!!!!"
                 }, void 0, false, {
                     fileName: "[project]/src/app/components/TodoList.tsx",
                     lineNumber: 39,
-                    columnNumber: 73
+                    columnNumber: 83
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/components/TodoList.tsx",
@@ -524,7 +524,7 @@ function TodoList() {
                                                     onClick: ()=>mutation.mutate({
                                                             id: todo.id
                                                         }),
-                                                    children: "Xoa?"
+                                                    children: "Delete"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/TodoList.tsx",
                                                     lineNumber: 59,
@@ -543,7 +543,7 @@ function TodoList() {
                                                             id: todo.id,
                                                             completed: !todo.completed
                                                         }),
-                                                    children: "completed?"
+                                                    children: "Complete"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/components/TodoList.tsx",
                                                     lineNumber: 64,
